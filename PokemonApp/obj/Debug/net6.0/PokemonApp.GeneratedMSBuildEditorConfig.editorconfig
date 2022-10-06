@@ -8,97 +8,97 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PokemonApp
 build_property.RootNamespace = PokemonApp
-build_property.ProjectDir = C:\Users\zaiz\Desktop\node js\PokemonMVC\PokemonApp\
+build_property.ProjectDir = C:\Users\czaiz\Desktop\Projects\Me\PokemonApp\PokemonApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\zaiz\Desktop\node js\PokemonMVC\PokemonApp
+build_property.MSBuildProjectDirectory = C:\Users\czaiz\Desktop\Projects\Me\PokemonApp\PokemonApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Home/Index.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Home/Privacy.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonRegions/Create.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonRegions/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblJlZ2lvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonRegions/Delete.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonRegions/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblJlZ2lvbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonRegions/Details.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonRegions/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblJlZ2lvbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonRegions/Edit.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonRegions/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblJlZ2lvbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonRegions/Index.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonRegions/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblJlZ2lvbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Pokemons/Create.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Pokemons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Pokemons/Delete.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Pokemons/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Pokemons/Details.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Pokemons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Pokemons/Edit.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Pokemons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Pokemons/Index.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Pokemons/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonTypes/Create.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonTypes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblR5cGVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonTypes/Delete.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonTypes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblR5cGVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonTypes/Details.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonTypes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblR5cGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonTypes/Edit.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonTypes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblR5cGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/PokemonTypes/Index.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/PokemonTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblR5cGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Shared/Error.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/_ViewImports.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/_ViewStart.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/zaiz/Desktop/node js/PokemonMVC/PokemonApp/Views/Shared/_Layout.cshtml]
+[C:/Users/czaiz/Desktop/Projects/Me/PokemonApp/PokemonApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ca8fov6sgs

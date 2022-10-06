@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group mt-2">
@@ -26,6 +26,10 @@
                 <label asp-for="PokemonTypeId" class="control-label">Tipo</label>
                 <select asp-for="PokemonTypeId" class="form-control" asp-items="ViewBag.PokemonTypeId"></select>
                 <span asp-validation-for="PokemonTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label class="control-label">Imagen</label>
+                <input type="file" id="File1" name="File1" class="form-control" />
             </div>
             <div class="form-group mt-2">
                 <input type="submit" value="Guardar" class="btn btn-primary" />

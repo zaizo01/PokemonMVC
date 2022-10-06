@@ -11,8 +11,8 @@ using PokemonApp.Models;
 namespace PokemonApp.Migrations
 {
     [DbContext(typeof(PokemonDbContext))]
-    [Migration("20221006004021_int")]
-    partial class @int
+    [Migration("20221006121132_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

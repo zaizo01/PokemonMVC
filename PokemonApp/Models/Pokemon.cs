@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokemonApp.Models
 {
@@ -14,6 +15,6 @@ namespace PokemonApp.Models
         [Required(ErrorMessage = "Este valor es requerido.")]
         public int PokemonTypeId { get; set; }
         //[Required]
-        //public string ImgPath { get; set; }
+        public string ImgPath { get; set; }
     }
 }

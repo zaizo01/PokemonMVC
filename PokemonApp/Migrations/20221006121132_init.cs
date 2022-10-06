@@ -4,7 +4,7 @@
 
 namespace PokemonApp.Migrations
 {
-    public partial class @int : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

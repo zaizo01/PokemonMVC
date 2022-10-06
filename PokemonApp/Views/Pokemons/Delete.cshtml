@@ -28,6 +28,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PokemonType.Name)
         </dd>
+        <dt class = "col-sm-2">
+            Imagenes
+        </dt>
+        <dd class="col-sm-10 w-25">
+            <img src="@Model.ImgPath" class="img-thumbnail" alt="@Model.Name"/>
+        </dd>
     </dl>
     
     <form asp-action="Delete">

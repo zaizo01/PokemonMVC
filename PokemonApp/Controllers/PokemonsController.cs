@@ -69,10 +69,20 @@ namespace PokemonApp.Controllers
       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,PokemonRegionId,PokemonTypeId")] Pokemon pokemon)
+        public async Task<IActionResult> Create([Bind("Id,Name,PokemonRegionId,PokemonTypeId,ImgPath")] Pokemon pokemon, IFormFile File1)
         { 
             if (ModelState.IsValid)
             {
+                if (File1 != null)
+                {
+
+                    string FileName = Guid.NewGuid() + Path.GetExtension(File1.FileName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", FileName);
+                    var stream = new FileStream(path, FileMode.Create);
+                    await File1.CopyToAsync(stream);
+                    string url = "/files/" + FileName;
+                    pokemon.ImgPath = url;
+                }
                 _context.Add(pokemon);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -91,6 +101,7 @@ namespace PokemonApp.Controllers
             }
 
             var pokemon = await _context.Pokemon.FindAsync(id);
+
             if (pokemon == null)
             {
                 return NotFound();
@@ -102,7 +113,7 @@ namespace PokemonApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PokemonRegionId,PokemonTypeId")] Pokemon pokemon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PokemonRegionId,PokemonTypeId,ImgPath")] Pokemon pokemon, IFormFile File1)
         {
             if (id != pokemon.Id)
             {
@@ -113,6 +124,17 @@ namespace PokemonApp.Controllers
             {
                 try
                 {
+                    if (File1 != null)
+                    {
+
+                        string FileName = Guid.NewGuid() + Path.GetExtension(File1.FileName);
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/files", FileName);
+                        var stream = new FileStream(path, FileMode.Create);
+                        await File1.CopyToAsync(stream);
+                        string url = "/files/" + FileName;
+                        pokemon.ImgPath = url;
+                    }
+
                     _context.Update(pokemon);
                     await _context.SaveChangesAsync();
                 }

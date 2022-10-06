@@ -19,6 +19,8 @@ namespace PokemonApp.Models
 
         public virtual DbSet<PokemonRegion> PokemonRegions { get; set; } = null!;
         public virtual DbSet<PokemonType> PokemonTypes { get; set; } = null!;
+        public virtual DbSet<Pokemon> Pokemon { get; set; } = null!;
+        //public DbSet<PokemonApp.Models.Pokemon> Pokemon { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,6 +51,6 @@ namespace PokemonApp.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-        public DbSet<PokemonApp.Models.Pokemon> Pokemon { get; set; }
+        
     }
 }
