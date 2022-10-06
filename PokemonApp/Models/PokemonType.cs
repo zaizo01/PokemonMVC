@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PokemonApp.Models
 {
     public partial class PokemonType
     {
         public int Id { get; set; }
-        public string? Name { get; set; }
+        [Required(ErrorMessage="Este valor es requerido.")]
+        public string Name { get; set; }
+        public int PokemonId { get; set; }
+        public Pokemon Pokemon { get; set; }
     }
 }

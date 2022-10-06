@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using PokemonApp.Models;
 
 namespace PokemonApp.Models
 {
@@ -31,17 +32,23 @@ namespace PokemonApp.Models
         {
             modelBuilder.Entity<PokemonRegion>(entity =>
             {
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Name)
+                            .HasMaxLength(50)
+                            .IsRequired();
             });
 
             modelBuilder.Entity<PokemonType>(entity =>
             {
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Name)
+                                .HasMaxLength(50)
+                                .IsRequired();
             });
 
             OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<PokemonApp.Models.Pokemon> Pokemon { get; set; }
     }
 }
