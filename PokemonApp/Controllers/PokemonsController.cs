@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PokemonApp.Models;
+
 
 namespace PokemonApp.Controllers
 {
@@ -13,18 +15,30 @@ namespace PokemonApp.Controllers
     {
         private readonly PokemonDbContext _context;
 
-        public PokemonsController(PokemonDbContext context)
+        public IWebHostEnvironment WebHostEnvironment { get; }
+
+        public PokemonsController(PokemonDbContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            WebHostEnvironment = webHostEnvironment;
         }
 
-        // GET: Pokemons
-        public async Task<IActionResult> Index()
+      
+        public async Task<IActionResult> Index(string searchString)
         {
-              return View(await _context.Pokemon.ToListAsync());
+            IQueryable<Pokemon> pokemonDbContext = _context.Pokemon
+                .Include(p => p.PokemonRegion)
+                .Include(p => p.PokemonType);
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pokemonDbContext = pokemonDbContext.Where(p => p.Name.Contains(searchString));
+            }
+            return View(await pokemonDbContext.ToListAsync());
         }
 
-        // GET: Pokemons/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Pokemon == null)
@@ -33,6 +47,8 @@ namespace PokemonApp.Controllers
             }
 
             var pokemon = await _context.Pokemon
+                .Include(p => p.PokemonRegion)
+                .Include(p => p.PokemonType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pokemon == null)
             {
@@ -42,29 +58,31 @@ namespace PokemonApp.Controllers
             return View(pokemon);
         }
 
-        // GET: Pokemons/Create
+     
         public IActionResult Create()
         {
+            ViewData["PokemonRegionId"] = new SelectList(_context.PokemonRegions, "Id", "Name");
+            ViewData["PokemonTypeId"] = new SelectList(_context.PokemonTypes, "Id", "Name");
             return View();
         }
 
-        // POST: Pokemons/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Pokemon pokemon)
-        {
+        public async Task<IActionResult> Create([Bind("Id,Name,PokemonRegionId,PokemonTypeId")] Pokemon pokemon)
+        { 
             if (ModelState.IsValid)
             {
                 _context.Add(pokemon);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PokemonRegionId"] = new SelectList(_context.PokemonRegions, "Id", "Name", pokemon.PokemonRegionId);
+            ViewData["PokemonTypeId"] = new SelectList(_context.PokemonTypes, "Id", "Name", pokemon.PokemonTypeId);
             return View(pokemon);
         }
 
-        // GET: Pokemons/Edit/5
+      
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Pokemon == null)
@@ -77,15 +95,14 @@ namespace PokemonApp.Controllers
             {
                 return NotFound();
             }
+            ViewData["PokemonRegionId"] = new SelectList(_context.PokemonRegions, "Id", "Name", pokemon.PokemonRegionId);
+            ViewData["PokemonTypeId"] = new SelectList(_context.PokemonTypes, "Id", "Name", pokemon.PokemonTypeId);
             return View(pokemon);
         }
 
-        // POST: Pokemons/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Pokemon pokemon)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PokemonRegionId,PokemonTypeId")] Pokemon pokemon)
         {
             if (id != pokemon.Id)
             {
@@ -112,10 +129,12 @@ namespace PokemonApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["PokemonRegionId"] = new SelectList(_context.PokemonRegions, "Id", "Name", pokemon.PokemonRegionId);
+            ViewData["PokemonTypeId"] = new SelectList(_context.PokemonTypes, "Id", "Name", pokemon.PokemonTypeId);
             return View(pokemon);
         }
 
-        // GET: Pokemons/Delete/5
+    
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Pokemon == null)
@@ -124,6 +143,8 @@ namespace PokemonApp.Controllers
             }
 
             var pokemon = await _context.Pokemon
+                .Include(p => p.PokemonRegion)
+                .Include(p => p.PokemonType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (pokemon == null)
             {
@@ -133,7 +154,7 @@ namespace PokemonApp.Controllers
             return View(pokemon);
         }
 
-        // POST: Pokemons/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -11,8 +11,8 @@ using PokemonApp.Models;
 namespace PokemonApp.Migrations
 {
     [DbContext(typeof(PokemonDbContext))]
-    [Migration("20221005235855_models-validation3")]
-    partial class modelsvalidation3
+    [Migration("20221006004021_int")]
+    partial class @int
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,6 +22,33 @@ namespace PokemonApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("PokemonApp.Models.Pokemon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PokemonRegionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PokemonRegionId");
+
+                    b.HasIndex("PokemonTypeId");
+
+                    b.ToTable("Pokemon");
+                });
 
             modelBuilder.Entity("PokemonApp.Models.PokemonRegion", b =>
                 {
@@ -57,6 +84,25 @@ namespace PokemonApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PokemonTypes");
+                });
+
+            modelBuilder.Entity("PokemonApp.Models.Pokemon", b =>
+                {
+                    b.HasOne("PokemonApp.Models.PokemonRegion", "PokemonRegion")
+                        .WithMany()
+                        .HasForeignKey("PokemonRegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonApp.Models.PokemonType", "PokemonType")
+                        .WithMany()
+                        .HasForeignKey("PokemonTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PokemonRegion");
+
+                    b.Navigation("PokemonType");
                 });
 #pragma warning restore 612, 618
         }

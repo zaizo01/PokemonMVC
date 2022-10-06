@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokemonApp.Models
 {
@@ -9,7 +10,5 @@ namespace PokemonApp.Models
         public int Id { get; set; }
         [Required(ErrorMessage="Este valor es requerido.")]
         public string Name { get; set; }
-        public int PokemonId { get; set; }
-        public Pokemon Pokemon { get; set; }
     }
 }

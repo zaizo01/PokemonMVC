@@ -18,13 +18,13 @@ namespace PokemonApp.Controllers
             _context = context;
         }
 
-        // GET: PokemonRegions
+        
         public async Task<IActionResult> Index()
         {
               return View(await _context.PokemonRegions.ToListAsync());
         }
 
-        // GET: PokemonRegions/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.PokemonRegions == null)
@@ -42,15 +42,13 @@ namespace PokemonApp.Controllers
             return View(pokemonRegion);
         }
 
-        // GET: PokemonRegions/Create
+       
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: PokemonRegions/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] PokemonRegion pokemonRegion)
@@ -64,7 +62,7 @@ namespace PokemonApp.Controllers
             return View(pokemonRegion);
         }
 
-        // GET: PokemonRegions/Edit/5
+      
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.PokemonRegions == null)
@@ -80,9 +78,7 @@ namespace PokemonApp.Controllers
             return View(pokemonRegion);
         }
 
-        // POST: PokemonRegions/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] PokemonRegion pokemonRegion)
@@ -115,7 +111,7 @@ namespace PokemonApp.Controllers
             return View(pokemonRegion);
         }
 
-        // GET: PokemonRegions/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.PokemonRegions == null)
@@ -133,7 +129,7 @@ namespace PokemonApp.Controllers
             return View(pokemonRegion);
         }
 
-        // POST: PokemonRegions/Delete/5
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

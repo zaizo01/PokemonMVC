@@ -1,19 +1,41 @@
 ﻿@model IEnumerable<PokemonApp.Models.Pokemon>
 
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Listado de pokemones</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-success">Crear pokemon</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.TextBox("SearchString")  
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </p>
+@*
+    <div>
+        @foreach (var item in Model.ToList())
+        {
+            <p>@item</p>
+            @Html.CheckBox("")  
+        }
+    </div>*@
+}
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Nombre
+            </th>
+            <th>
+                Región
+            </th>
+            <th>
+                Tipo
             </th>
             <th></th>
         </tr>
@@ -25,9 +47,15 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.PokemonRegion.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PokemonType.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Ver</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
 }

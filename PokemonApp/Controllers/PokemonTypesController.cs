@@ -18,13 +18,13 @@ namespace PokemonApp.Controllers
             _context = context;
         }
 
-        // GET: PokemonTypes
+       
         public async Task<IActionResult> Index()
         {
               return View(await _context.PokemonTypes.ToListAsync());
         }
 
-        // GET: PokemonTypes/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.PokemonTypes == null)
@@ -42,15 +42,13 @@ namespace PokemonApp.Controllers
             return View(pokemonType);
         }
 
-        // GET: PokemonTypes/Create
+       
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: PokemonTypes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] PokemonType pokemonType)
@@ -64,7 +62,7 @@ namespace PokemonApp.Controllers
             return View(pokemonType);
         }
 
-        // GET: PokemonTypes/Edit/5
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.PokemonTypes == null)
@@ -80,9 +78,7 @@ namespace PokemonApp.Controllers
             return View(pokemonType);
         }
 
-        // POST: PokemonTypes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] PokemonType pokemonType)
@@ -115,7 +111,7 @@ namespace PokemonApp.Controllers
             return View(pokemonType);
         }
 
-        // GET: PokemonTypes/Delete/5
+     
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.PokemonTypes == null)
@@ -133,7 +129,7 @@ namespace PokemonApp.Controllers
             return View(pokemonType);
         }
 
-        // POST: PokemonTypes/Delete/5
+       
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
